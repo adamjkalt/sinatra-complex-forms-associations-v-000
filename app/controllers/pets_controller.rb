@@ -32,7 +32,6 @@ end
   post '/pets/:id' do
     @pet = Pet.find(params[:id])
     @pet.update(params["pet"])
-    binding.pry
     if !params["owner"]["name"].empty?
       @pet.owners << Owner.create(name: params["owner"]["name"])
     end
